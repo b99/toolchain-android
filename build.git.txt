@@ -1,0 +1,5 @@
+
+git clone git://android.git.linaro.org/toolchain/build.git
+
+http://releases.linaro.org/14.09/components/android/toolchain/4.9
+

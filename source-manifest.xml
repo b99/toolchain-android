@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote  name="korg"
+           fetch="git://android.git.linaro.org/"
+           review="review.android.git.linaro.org" />
+
+  <remote  name="linaro-android"
+           fetch="git://android.git.linaro.org/"
+           review="review.android.git.linaro.org" />
+
+  <remote  name="linaro-other"
+           fetch="git://git.linaro.org/" />
+
+  <default revision="linaro-master"
+           remote="linaro-android" />
+
+  <project path="benchmark" name="toolchain/benchmark" revision="master" />
+  <project path="binutils/binutils-current" name="toolchain/binutils-current" revision="linaro-2.23.52.0.2" />
+  <project path="build" name="toolchain/build" />
+  <project path="gcc-patches" name="toolchain/gcc-patches" revision="master" />
+  <project path="gdb/gdb-current" name="toolchain/gdb-current" revision="master" />
+  <project path="gmp/gmp-current" name="toolchain/gmp-current" revision="linaro-5.1.1" />
+  <project path="mpc/mpc-current" name="toolchain/mpc-current" revision="linaro-1.0.1" />
+  <project path="mpfr/mpfr-current" name="toolchain/mpfr-current" revision="linaro-3.1.2" />
+  <project path="ppl" name="toolchain/ppl" revision="linaro-master" />
+  <project path="cloog/cloog-current" name="toolchain/cloog-current" revision="linaro-0.18.1" />
+
+  <!-- Bionic and the minimal parts of the Android build system needed to build it - needed for libgomp and friends -->
+  <project path="android/build" name="platform/build" revision="master">
+    <copyfile dest="android/Makefile" src="core/root.mk"/>
+  </project>
+  <project name="device/common" path="android/device/common" revision="master"/>
+  <project name="platform/frameworks/base" path="android/frameworks/base" revision="master"/>
+  <project name="platform/frameworks/native" path="android/frameworks/native" revision="master"/>
+  <project name="platform/external/elfutils" path="android/external/elfutils" revision="master"/>
+  <project name="platform/external/svox" path="android/external/svox" revision="master"/>
+  <project name="platform/external/jemalloc" path="android/external/jemalloc" revision="master"/>
+  <project name="platform/external/libunwind" path="android/external/libunwind" revision="master"/>
+  <project name="platform/system/core" path="android/system/core" revision="master" />
+  <project name="platform/prebuilts/clang/linux-x86/host/3.5" path="android/prebuilts/clang/linux-x86/host/3.5" revision="master" />
+  <project name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" path="android/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" revision="master" />
+  <project path="android/bionic" name="platform/bionic" revision="master" />
+</manifest>
